@@ -66,5 +66,11 @@ public class MovieController {
 		}
 	}
 	
+	@GetMapping("/rating/{rating}")
+	public List<Movie> getMoviesForRating(@PathVariable String rating) {
+		return movieRepo.findByRating(rating);
+		
+	}
+	
 
 }
