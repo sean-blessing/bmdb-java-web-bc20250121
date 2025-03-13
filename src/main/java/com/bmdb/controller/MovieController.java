@@ -42,7 +42,7 @@ public class MovieController {
 	}
 	
 	@PutMapping("/{id}")
-	public void putMovie(@PathVariable int id, @RequestBody Movie movie) {
+	public void update(@PathVariable int id, @RequestBody Movie movie) {
 		if (id != movie.getId()) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Movie id mismatch vs URL.");
 		}
